@@ -1,0 +1,50 @@
+.dot {
+  height: 15px;
+  width: 15px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+}
+.dot_green {
+  height: 15px;
+  width: 15px;
+  padding-left: 9px;
+  background-color: #35d32d;
+  border-radius: 50%;
+  display: inline-block;
+  box-shadow: #bbb;
+}
+
+.dot_red {
+  height: 15px;
+  width: 15px;
+  padding-left: 9px;
+  background-color: #e01818;
+  border-radius: 50%;
+  display: inline-block;
+  box-shadow: #bbb;
+}
+
+.dot_yellow {
+  height: 15px;
+  width: 15px;
+  padding-left: 9px;
+  background-color: #efeb16;
+  border-radius: 50%;
+  display: inline-block;
+  box-shadow: #bbb;
+}
+
+.dot_blue {
+  height: 15px;
+  width: 15px;
+  padding-left: 9px;
+  background-color: #0745cd;
+  border-radius: 50%;
+  display: inline-block;
+  box-shadow: #bbb;
+}
+
+.card-body .dot {
+  padding-top: 10px;
+}
