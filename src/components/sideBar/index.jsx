@@ -13,7 +13,7 @@ import { Button, Layout, Menu, Modal, theme } from "antd";
 import { useState } from "react";
 import { MenuUnfoldOutlined, DiffOutlined } from "@ant-design/icons";
 import logo from "../../assets/astracopy.png";
-import LayouCasting from "../../assets/LayoutCasting2.jpg";
+import LayouCasting from "../../assets/LayoutCasting.jpg";
 import Pps from "../../assets/pps2.jpg";
 import SkillMap from "../../assets/SkillMap.jpg";
 import FormAttendance from "../../assets/FormAttendance.jpg";
@@ -27,6 +27,9 @@ import TableHenkaten from "../tableHenkaten";
 import FixTime from "../../assets/FixTime.jpg";
 import PointCheck from "../../assets/PointCheck.jpg";
 import ModalHenkatenToday from "../modalHenkatenToday";
+import DraggableDot from "../dragableDot";
+import fotoade from "../../assets/paksuyud.jpg";
+
 import "../sideBar/index.css";
 
 const { Header, Sider, Content } = Layout;
@@ -34,7 +37,7 @@ const Sidebar = () => {
   const LogoutIcon = () => (
     <LogoutOutlined style={{ transform: "rotateY(180deg)" }} />
   );
-  const [collapsed, setCollapsed] = useState(false);
+  const [collapsed, setCollapsed] = useState(true);
   const {
     token: { colorBgContainer },
   } = theme.useToken();
@@ -509,9 +512,19 @@ const Sidebar = () => {
                   >
                     <div className="row d-flex align-items-center justify-content-center text-center my-1">
                       <div className="col d-flex">
+                        <DraggableDot />
                         <div className="dot_red mx-1"></div>
                         <div className="dot_red mx-1"></div>
-                        <div className="dot_red mx-1"></div>
+                        <img
+                          src={fotoade}
+                          alt=""
+                          style={{ width: 10, height: 10, borderRadius: "50%" }}
+                        />
+                        <img
+                          src={fotoade}
+                          alt=""
+                          style={{ width: 10, height: 10, borderRadius: "50%" }}
+                        />
                       </div>
                     </div>
                     <div className="row align-items-center justify-content-center text-center my-1">

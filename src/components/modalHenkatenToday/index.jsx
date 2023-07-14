@@ -1,47 +1,33 @@
 import React from "react";
-import { Modal } from "antd";
+import { Modal, notification } from "antd";
 import { Button, Form, Input, Space, Select } from "antd";
 import { DiffOutlined } from "@ant-design/icons";
 import axios from "axios";
 
-const SubmitButton = ({ form }) => {
-  const [submittable, setSubmittable] = React.useState(false);
-
-  // Watch all values
-  const values = Form.useWatch([], form);
-  React.useEffect(() => {
-    form
-      .validateFields({
-        validateOnly: true,
-      })
-      .then(
-        () => {
-          setSubmittable(true);
-        },
-        () => {
-          setSubmittable(false);
-        }
-      );
-  }, [values]);
-  return (
-    <Button type="primary" htmlType="submit" disabled={!submittable}>
-      Submit
-    </Button>
-  );
-};
 const ModalHenkatenToday = ({ showModal, hideModal, judulModal }) => {
   const [form] = Form.useForm();
 
   const onFinish = async (values) => {
     try {
       // Make the POST request using Axios
-      const response = await axios.post("your-api-endpoint", values);
+      const response = await axios.post(
+        "http://localhost:5000/addhenkatens",
+        values
+      );
       console.log(response.data); // Optionally, handle the response
 
       // Reset the form fields after successful submission
       form.resetFields();
+      notification.success({
+        message: "Henkaten Berhasil di Submit",
+        description: "Henkaten submitted successfully!",
+      });
     } catch (error) {
       console.error(error);
+      notification.error({
+        message: "Henkaten Gagal di Submit",
+        description: "Henkaten submitted Gagal!",
+      });
       // Handle the error if the request fails
     }
   };
@@ -187,7 +173,9 @@ const ModalHenkatenToday = ({ showModal, hideModal, judulModal }) => {
             </Form.Item>
             <Form.Item>
               <Space>
-                <SubmitButton form={form} />
+                <Button type="primary" htmlType="submit">
+                  Submit
+                </Button>
                 <Button htmlType="reset">Reset</Button>
               </Space>
             </Form.Item>

@@ -30,7 +30,7 @@ const ModalAttendance = ({ showModal, hideModal, judulModal }) => {
       console.error(error);
       notification.error({
         message: "Absensi Gagal di Submit",
-        description: "Attendance submitted successfully!",
+        description: "Attendance submitted Gagal!",
       });
       // Handle the error if the request fails
     }

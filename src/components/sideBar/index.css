@@ -13,6 +13,7 @@
   border-radius: 50%;
   display: inline-block;
   box-shadow: #bbb;
+  cursor: pointer;
 }
 
 .dot_red {
@@ -47,4 +48,8 @@
 
 .card-body .dot {
   padding-top: 10px;
+}
+
+.drag-active {
+  border: 2px dashed blue;
 }
